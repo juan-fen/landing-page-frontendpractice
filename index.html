@@ -3,9 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Minimalist Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* General Reset and Setup */
+      :root {
+        --black: #ffffff;
+        --white: #000000;
+        --light-gray: #f4f4f4;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: var(--black);
+        background-color: var(--white);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header/Navigation */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        border-bottom: 1px solid var(--light-gray);
+        background-color: var(--white);
+      }
+
+      .logo {
+        font-size: 1.5em;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--black);
+        margin-left: 20px;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav a:hover {
+        color: var(--light-gray); /* Subtle change on hover */
+      }
+
+      /* Hero Section */
+      .hero {
+        flex-grow: 1; /* Takes up all available space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 50px 5%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 4em;
+        margin-bottom: 0.2em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25em;
+        margin-bottom: 2em;
+        max-width: 600px;
+      }
+
+      /* Call-to-Action Button */
+      .cta-button {
+        background-color: var(--black);
+        color: var(--white);
+        border: 2px solid var(--black);
+        padding: 15px 30px;
+        font-size: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+      }
+
+      .cta-button:hover {
+        background-color: var(--white);
+        color: var(--black);
+        border-color: var(--black);
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        border-top: 1px solid var(--light-gray);
+        font-size: 0.9em;
+        color: var(--black);
+        margin-top: auto; /* Pushes the footer to the bottom */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .header {
+          flex-direction: column;
+          padding: 15px;
+        }
+
+        .nav {
+          margin-top: 10px;
+        }
+
+        .nav a {
+          margin: 0 10px;
+        }
+
+        .hero-title {
+          font-size: 2.5em;
+        }
+
+        .hero-subtitle {
+          font-size: 1em;
+        }
+
+        .cta-button {
+          padding: 12px 25px;
+        }
+      }
+    </style>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const ctaButton = document.getElementById("cta-button");
+
+        if (ctaButton) {
+          ctaButton.addEventListener("click", () => {
+            alert("Thank you for your interest! We are now redirecting you...");
+            // In a real application, you would replace the alert
+            // with a function to redirect the user or open a form.
+          });
+        }
+      });
+    </script>
   </head>
   <body>
-    <main></main>
+    <header class="header">
+      <div class="logo">**MINIMA**</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <h1 class="hero-title">Elegance in **Simplicity**</h1>
+      <p class="hero-subtitle">
+        Focus on what matters. Less noise, more impact.
+      </p>
+      <button id="cta-button" class="cta-button">Discover Our Work</button>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Minima. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
